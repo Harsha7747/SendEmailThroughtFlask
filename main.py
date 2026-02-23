@@ -10,7 +10,7 @@ CORS(app)
 def SendEmail():
     data = request.get_json()
 
-    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server = smtplib.SMTP('smtp.gmail.com', 465)
     server.ehlo()
     server.starttls()
     server.login('shyammmmm85@gmail.com', 'wbzsuggwtncmddoi')
@@ -27,3 +27,4 @@ def SendEmail():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
