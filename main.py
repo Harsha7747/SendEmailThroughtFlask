@@ -15,7 +15,7 @@ def SendEamail():
   server.starttls()
 
 # Login (use app password, not real password)
-  server.login('shyammmmm85@gmail.com', 'wbzs ugwg tncm ddoi')
+  server.login('shyammmmm85@gmail.com', 'wbzsuggwtncmddoi')
 
 # Email content
   from_address = 'shyammmmm85@gmail.com'
@@ -35,4 +35,6 @@ def SendEamail():
 
   print("Email sent successfully!")
 if __name__=="__main__":
-  app.run(debug=True)
+   port = int(os.environ.get("PORT", 5000))  # ← this fixes Render
+   app.run(host="0.0.0.0", port=port)
+
